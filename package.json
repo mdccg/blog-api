@@ -4,6 +4,7 @@
    "description": "API para estudo de testes de API",
    "type": "commonjs",
    "devDependencies": {
+      "@faker-js/faker": "^8.0.2",
       "@types/cors": "^2.8.13",
       "@types/express": "^4.17.15",
       "@types/jsonwebtoken": "^9.0.1",
