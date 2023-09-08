@@ -7,7 +7,7 @@
   - [Documentação](#documentação)
   - [Motivação](#motivação)
     - [Hardware utilizado para o teste de carga](#hardware-utilizado-para-o-teste-de-carga)
-  - [Resultado do teste de carga](#resultado-do-teste-de-carga)
+    - [Resultado do teste de carga](#resultado-do-teste-de-carga)
   - [Pilha de tecnologia](#pilha-de-tecnologia)
   - [Como rodar](#como-rodar)
     - [Pré-requisitos](#pré-requisitos)
@@ -38,7 +38,7 @@ Este foi o segundo repositório de código apresentado no [Curso Superior de TSI
 <details>
   <summary>
     
-  ## Resultado do teste de carga
+  ### Resultado do teste de carga
   </summary>
 
   ```console
