@@ -16,14 +16,17 @@ export class PostController {
     return savedPost
   }
 
-  async findAllByUserId(userId: number): Promise<Post[]> {
+  async findAllByUserId(userId: number, page: number, perPage: number): Promise<Post[]> {
     const posts = await this._repo.find({
       where: {
         user: {
           id: userId,
         },
       },
+      skip: (page - 1) * perPage,
+      take: perPage,
     })
+
     return posts
   }
 

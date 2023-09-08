@@ -4,6 +4,8 @@ import { UserController } from '../controllers/UserController'
 import { Post } from '../entities/Post'
 import { validateEntity } from '../utils/validation'
 import { decodeUserEmailFromToken, verifyToken } from '../utils/authentication'
+import { getParams } from '../types/Params'
+import { redisClient } from '../config/cache'
 
 export const postRouter = Router()
 const postCtrl = new PostController()
@@ -48,10 +50,19 @@ postRouter.get('/:id', async (req: Request, res: Response) => {
 
 postRouter.get('/user/:userId', async (req: Request, res: Response) => {
   const { userId } = req.params
-
+  
   const userIdNumber = parseInt(userId)
   if (!isNaN(userIdNumber)) {
-    const posts = await postCtrl.findAllByUserId(userIdNumber)
+    const { page, perPage } = getParams(req.query)
+    
+    const cacheKey = `byUserId_${userId}_${page}_${perPage}`
+    const cachedPosts = await redisClient.get(cacheKey)
+  
+    if (cachedPosts) return res.json({ contacts: JSON.parse(cachedPosts) })
+  
+    const posts = await postCtrl.findAllByUserId(userIdNumber, page, perPage)
+    redisClient.set(cacheKey, JSON.stringify(posts), { EX: Number(process.env.CACHE_LIFE_TIME) })
+
     return res.status(200).json({ posts })
   }
 
