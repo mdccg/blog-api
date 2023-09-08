@@ -19,7 +19,7 @@ Durante a [execução da API](#como-rodar), a documentação estará disponível
 
 ## Motivação
 
-Este app é uma API de blog projetada para cadastrar autores de publicações. Cada usuário tem a capacidade de criar e gerenciar múltiplos posts. O verdadeiro destaque desta API reside na sua robustez, especialmente quando submetida a testes de carga. Durante um [teste recente](#relatório-do-artillery), a API demonstrou sua capacidade de lidar com 1.500 requisições em um intervalo de apenas dez segundos, graças à implementação de clusterização que utiliza todas as threads do processador. Além disso, a API otimiza o desempenho ao manter consultas recentes em cache por um período de 60 segundos, proporcionando uma experiência ágil aos usuários.
+Este app é uma API de blog projetada para cadastrar autores de publicações. Cada usuário tem a capacidade de criar e gerenciar múltiplos posts. O verdadeiro destaque desta API reside na sua robustez, especialmente quando submetida a testes de carga. Durante um [teste recente](#resultado-do-teste-de-carga), a API demonstrou sua capacidade de lidar com 1.500 requisições em um intervalo de apenas dez segundos, graças à implementação de clusterização que utiliza todas as threads do processador. Além disso, a API otimiza o desempenho ao manter consultas recentes em cache por um período de 60 segundos, proporcionando uma experiência ágil aos usuários.
 
 Este foi o segundo repositório de código apresentado no [Curso Superior de TSI do IFMS](https://www.ifms.edu.br/campi/campus-aquidauana/cursos/graduacao/sistemas-para-internet/sistemas-para-internet) como requisito para obtenção da nota parcial das atividades da unidade curricular Web Services.
 
