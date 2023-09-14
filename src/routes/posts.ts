@@ -58,7 +58,7 @@ postRouter.get('/user/:userId', async (req: Request, res: Response) => {
     const cacheKey = `byUserId_${userId}_${page}_${perPage}`
     const cachedPosts = await redisClient.get(cacheKey)
   
-    if (cachedPosts) return res.json({ contacts: JSON.parse(cachedPosts) })
+    if (cachedPosts) return res.json({ posts: JSON.parse(cachedPosts) })
   
     const posts = await postCtrl.findAllByUserId(userIdNumber, page, perPage)
     redisClient.set(cacheKey, JSON.stringify(posts), { EX: Number(process.env.CACHE_LIFE_TIME) })
