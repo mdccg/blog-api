@@ -23,7 +23,7 @@ Este app é uma API de blog projetada para cadastrar autores de publicações. C
 
 Este foi o segundo repositório de código apresentado no [Curso Superior de TSI do IFMS](https://www.ifms.edu.br/campi/campus-aquidauana/cursos/graduacao/sistemas-para-internet/sistemas-para-internet) como requisito para obtenção da nota parcial das atividades da unidade curricular Web Services.
 
-| [&larr; Repositório anterior](https://github.com/mdccg/artillery-demo) | [Próximo repositório &rarr;](#) |
+| [&larr; Repositório anterior](https://github.com/mdccg/artillery-demo) | [Próximo repositório &rarr;](https://github.com/mdccg/swagger-ui-demo) |
 |-|-|
 
 ### Hardware utilizado para o teste de carga
